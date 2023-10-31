@@ -15,7 +15,6 @@ const DestinationsIndex = (props) => {
             }
             const body = await response.json()
             const newDestinations = body.destinations
-            console.log(newDestinations)
             setDestinations(
                 ...destinations,
                 newDestinations
@@ -28,8 +27,6 @@ const DestinationsIndex = (props) => {
     useEffect(() => {
         getDestinations()
     }, [])
-
-    console.log("destinations:", destinations)
 
     const destinationTiles = destinations.map((destination) => {
         return (
