@@ -5,13 +5,10 @@ import clientRouter from "./clientRouter.js";
 import destinationsRouter from "./api/v1/destinationsRouter.js";
 const rootRouter = new express.Router();
 
-
 rootRouter.use("/", clientRouter);
 rootRouter.use("/api/v1/user-sessions", userSessionsRouter);
 rootRouter.use("/api/v1/users", usersRouter);
-
-rootRouter.use("/api/v1/destinations", destinationsRouter)
-
 //place your server-side routes here
+rootRouter.use("/api/v1/destinations", destinationsRouter)
 
 export default rootRouter;

@@ -4,7 +4,7 @@ const DestinationTile = (props) => {
     const { name, destinationType, location, website, description } = props.destination
 
     return (
-        <div>
+        <>
             <h3>{name}</h3>
             <p>{description}</p>
             <ul>
@@ -12,7 +12,7 @@ const DestinationTile = (props) => {
                 <li>{destinationType}</li>
                 <li>{website}</li>
             </ul>
-        </div>
+        </>
     )
 }
 

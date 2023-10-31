@@ -15,10 +15,7 @@ const DestinationsIndex = (props) => {
             }
             const body = await response.json()
             const newDestinations = body.destinations
-            setDestinations(
-                ...destinations,
-                newDestinations
-            )
+            setDestinations(newDestinations)
         } catch (err) {
             console.error(`Error in Fetch, ${err.message}`)
         }
@@ -30,19 +27,17 @@ const DestinationsIndex = (props) => {
 
     const destinationTiles = destinations.map((destination) => {
         return (
-            <p key={destination.id}>
-                <DestinationTile destination={destination}/>
-            </p>
+                <DestinationTile key={destination.id} destination={destination}/>
         )
     })
 
     
 
     return (
-        <div>
+        <>
             <h1>Destinations!</h1>
             {destinationTiles}
-        </div>
+        </>
     )
 
 }
