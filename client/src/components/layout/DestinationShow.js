@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const DestinationShow = (props) => {
-  const [destination, setDestination] = useState({
-    id: "",
-    name: "",
-    type: "",
-    location: "",
-    description: "",
-    website: "",
-  });
+  const [destination, setDestination] = useState({});
+
   const { id, name, type, location, description, website } = destination;
+
   const getDestination = async () => {
     const destinationId = props.match.params.id;
     try {
@@ -26,25 +21,21 @@ const DestinationShow = (props) => {
       console.error(`Error in fetch ${err.message}`);
     }
   };
+
   useEffect(() => {
     getDestination();
   }, []);
-  return (
-    <>
-      <div className="destination">
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <ul>
-          <li>{type}</li>
-          <li>{location}</li>
-          <li>{website}</li>
-        </ul>
-      </div>
 
-      <div className="reviews">
-        <h1>Reviews:</h1>
-      </div>
-    </>
+  return (
+    <div className="destination">
+      <h1>{name}</h1>
+      <p>{description}</p>
+      <ul>
+        <li>{type}</li>
+        <li>{location}</li>
+        <li>{website}</li>
+      </ul>
+    </div>
   );
 };
 export default DestinationShow;
