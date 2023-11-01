@@ -34,7 +34,6 @@ const NewDestinationForm = (props) => {
         }
       }
       const body = await response.json();
-      console.log("Check for persisted new destination");
       setShouldRedirect(true);
     } catch (err) {
       console.error(`Error in fetch: ${err.message}`);
