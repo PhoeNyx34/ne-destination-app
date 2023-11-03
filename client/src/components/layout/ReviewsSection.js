@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import ReviewTile from "./ReviewTile"
 
 
-const ReviewsSection = ({ destinationName }) => {
+const ReviewsSection = (props) => {
     
     const [reviews, setReviews] = useState([])
     
