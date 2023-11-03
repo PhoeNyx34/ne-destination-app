@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import ReviewsSection from "./ReviewsSection"
 
 const DestinationShow = (props) => {
   const [destination, setDestination] = useState({});
 
-  const { id, name, type, location, description, website } = destination;
+  const { id, name, type, location, description, website } = destination
 
   const getDestination = async () => {
     const destinationId = props.match.params.id;
@@ -25,11 +24,11 @@ const DestinationShow = (props) => {
   };
 
   useEffect(() => {
-    getDestination();
-  }, []);
+    getDestination()
+  }, [])
 
   return (
-    <div>  
+    <>
       <div className="destination">
         <h1>{name}</h1>
         <p>{description}</p>
@@ -39,10 +38,8 @@ const DestinationShow = (props) => {
           <li>{website}</li>
         </ul>
       </div>
- 
-        <ReviewsSection destinationName={name} destinationId={props.match.params.id} user={props.user}/>
-
-    </div>
+      <ReviewsSection destinationName={name} destinationId={props.match.params.id} user={props.user} />
+    </>
   );
 };
 export default DestinationShow;

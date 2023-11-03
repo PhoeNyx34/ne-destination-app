@@ -4,7 +4,6 @@ import Dropzone from "react-dropzone";
 
 const AccountPage = (props) => {
  
-
   const [user, setUser] = useState(props.user); 
   const [profilePicture, setProfilePicture] = useState({}); 
   const handleImageUpload = (acceptedImage) => {
@@ -42,10 +41,6 @@ const AccountPage = (props) => {
 
   let uploadImagePromptText = "Click Or Drag Here To Edit Profile Image";
 
-  const handleClick = (event) => {
-    uploadImagePromptText = "Click Or Drag Here To Edit Profile Image";
-  }
-
   if (!_.isEmpty(profilePicture)) {
     uploadImagePromptText = "Image received. Click button below to save!";
   }
@@ -53,13 +48,9 @@ const AccountPage = (props) => {
   return (
     <div className="grid-container">
       <h2>Account Details</h2>
-      <h5>
-        {" "}
-        <strong>Username </strong> {user.userName}
+      <h5>Username: {user.userName}
       </h5>
-      <h5>
-        <strong>Email </strong>
-        {user.email}
+      <h5>Email: {user.email}
       </h5>
       <form className="dropzone" onSubmit={handleSubmit}>
         <Dropzone onDrop={handleImageUpload}>
@@ -73,7 +64,7 @@ const AccountPage = (props) => {
             </div>
           )}
         </Dropzone>
-        <input type="submit" value="Save Selected Profile Image" onClick={handleClick} />
+        <input type="submit" value="Save Selected Profile Image" />
       </form>
     </div>
   )

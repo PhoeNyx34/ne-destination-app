@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import ReviewTile from "./ReviewTile"
 
 
-const ReviewsSection = (props) => {
+const ReviewsSection = ({ destinationName }) => {
     
     const [reviews, setReviews] = useState([])
     
@@ -18,15 +18,13 @@ const ReviewsSection = (props) => {
             const body = await response.json()
             setReviews(body.reviews)
         } catch (err) {
-                console.error(`Error in fetch: ${err.message}`)
-            }
+            console.error(`Error in fetch: ${err.message}`)
+        }
     }
     
     useEffect(() => {
         getReviews()
     }, [])
-
-  
 
     const reviewsList = reviews.map(reviewItem => {
         return ( 
@@ -36,24 +34,15 @@ const ReviewsSection = (props) => {
                 reviewContent={reviewItem.reviewContent}
                 rating={reviewItem.rating}
             />
-            )
+        )
     })
-
-    const destinationName = props.destinationName
     
     return (
-        <div>
+        <>
             <h2>Reviews</h2>
-            
-            <div>
-                { reviewsList }
-            </div>
-        </div>
+            { reviewsList }
+        </>
     )
-
 }
 
 export default ReviewsSection
-
-
-

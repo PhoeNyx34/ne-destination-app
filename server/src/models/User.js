@@ -8,7 +8,6 @@ const saltRounds = 10;
 const uniqueFunc = unique({
   fields: ["email"],
   identifiers: ["id"],
-  image: {}
 });
 
 class User extends uniqueFunc(Model) {

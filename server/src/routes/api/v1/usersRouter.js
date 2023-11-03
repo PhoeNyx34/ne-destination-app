@@ -3,7 +3,6 @@ import passport from "passport";
 import { User } from "../../../models/index.js";
 import uploadImage from "../../../services/uploadImage.js";
 import cleanUserInput from "../../../services/cleanUserInput.js";
-
 import { ValidationError } from "objection";
 
 const usersRouter = new express.Router();
@@ -28,15 +27,10 @@ usersRouter.post("/", async (req, res) => {
 usersRouter.patch("/:id", uploadImage.single("image"), async (req, res) => {
   const currentId = req.params.id;
   try {
-    //     // const { body } = req
     const data = req.file?.location;
-    // const currentUser = await User.Id });
-
     const updatedUser = await req.user.$query().patchAndFetch({
       image: data,
     });
-    //     console.log("UPDATED USER:", updatedUser);
-    // const updatedUser = await User.query().updateAndFetchById(currentId, user);
     return res.status(201).json({ user: updatedUser });
   } catch (error) {
     console.log(error);
