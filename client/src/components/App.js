@@ -8,6 +8,7 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import DestinationsIndex from "./layout/DestinationsIndex";
+import NewDestinationForm from "./layout/NewDestinationForm";
 import DestinationShow from "./layout/DestinationShow";
 import AccountPage from "./layout/AccountPage";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute"
@@ -33,12 +34,13 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/" component={DestinationsIndex} />
-        <AuthenticatedRoute exact path="/destinations/:id/new-review" component={NewReviewForm} user={currentUser}/>
-        <Route exact path="/destinations/:id" component={DestinationShow} />
+
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
-        {/* <Route exact path="/user-sessions/current" component={AccountPage} /> */}
+        <Route exact path="/destinations/new" component={NewDestinationForm} />
+        <Route exact path="/destinations/:id" component={DestinationShow} />
         <AuthenticatedRoute exact path="/profile" component={AccountPage} user={currentUser}/>
+        <AuthenticatedRoute exact path="/destinations/:id/new-review" component={NewReviewForm} user={currentUser}/>
       </Switch>
     </Router>
   );
