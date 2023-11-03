@@ -11,12 +11,8 @@ import DestinationsIndex from "./layout/DestinationsIndex";
 import NewDestinationForm from "./layout/NewDestinationForm";
 import DestinationShow from "./layout/DestinationShow";
 import AccountPage from "./layout/AccountPage";
-<<<<<<< HEAD
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute"
 import NewReviewForm from "./layout/NewReviewForm";
-=======
-import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
->>>>>>> 23fd5b4e790dad52e007c659f46f1465a45467e2
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
