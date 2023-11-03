@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import ReviewsSection from "./ReviewsSection"
+
 const DestinationShow = (props) => {
   const [destination, setDestination] = useState({});
 
@@ -27,14 +29,19 @@ const DestinationShow = (props) => {
   }, []);
 
   return (
-    <div className="destination">
-      <h1>{name}</h1>
-      <p>{description}</p>
-      <ul>
-        <li>{type}</li>
-        <li>{location}</li>
-        <li>{website}</li>
-      </ul>
+    <div>  
+      <div className="destination">
+        <h1>{name}</h1>
+        <p>{description}</p>
+        <ul>
+          <li>{type}</li>
+          <li>{location}</li>
+          <li>{website}</li>
+        </ul>
+      </div>
+ 
+        <ReviewsSection destinationName={name} destinationId={props.match.params.id} user={props.user}/>
+
     </div>
   );
 };

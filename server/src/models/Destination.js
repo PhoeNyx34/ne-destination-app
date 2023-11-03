@@ -18,6 +18,22 @@ class Destination extends Model {
       },
     };
   }
+
+  static get relationMappings() {
+    const { Review } = require("./index.js")
+
+    return {
+      reviews: {
+        relation: Model.HasManyRelation,
+        modelClass: Review,
+        join: {
+          from: "destinations.id",
+          to: "reviews.destinationId"
+        }
+
+      }
+    }
+  }
 }
 
 module.exports = Destination;
