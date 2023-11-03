@@ -1,5 +1,6 @@
 import express from "express";
 import { Destination } from "../../../models/index.js";
+import destinationReviewsRouter from "./destinationsReviewRouter.js";
 import objection from "objection";
 const { ValidationError } = objection;
 import cleanUserInput from "../../../services/cleanUserInput.js";
@@ -38,5 +39,7 @@ destinationsRouter.get("/:id", async (req, res) => {
     return res.status(500).json({ error: err });
   }
 });
+
+destinationsRouter.use("/:destinationId/reviews", destinationReviewsRouter)
 
 export default destinationsRouter;
