@@ -12,3 +12,13 @@
   -moz-tab-size: 4;
   tab-size: 4;
 }
+
+.rating {
+  width: 180px;
+}
+
+.rating__star {
+  cursor: pointer;
+  color: #dabd18b2;
+}
+

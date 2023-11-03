@@ -1,5 +1,6 @@
 import express from "express";
 import { Destination } from "../../../models/index.js";
+import destinationReviewsRouter from "./destinationsReviewRouter.js";
 
 const destinationsRouter = new express.Router();
 
@@ -21,5 +22,7 @@ destinationsRouter.get("/:id", async (req, res) => {
     return res.status(500).json({ error: err });
   }
 });
+
+destinationsRouter.use("/:destinationId/reviews", destinationReviewsRouter)
 
 export default destinationsRouter;
