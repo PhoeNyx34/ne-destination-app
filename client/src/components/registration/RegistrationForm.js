@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormError from "../layout/FormError";
 import config from "../../config";
+import _ from "lodash";
 
 const RegistrationForm = () => {
   const [userPayload, setUserPayload] = useState({
@@ -26,14 +27,14 @@ const RegistrationForm = () => {
       };
     }
 
-    if (userName.trim() == "") {
+    if (userName.trim() === "") {
       newErrors = {
         ...newErrors,
         userName: "is required",
       };
     }
 
-    if (password.trim() == "") {
+    if (password.trim() === "") {
       newErrors = {
         ...newErrors,
         password: "is required",
@@ -55,32 +56,33 @@ const RegistrationForm = () => {
     }
 
     setErrors(newErrors);
+    return _.isEmpty();
   };
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    validateInput(userPayload);
-    
-    try {
-      if (Object.keys(errors).length === 0) {
-        const response = await fetch("/api/v1/users", {
-          method: "post",
-          body: JSON.stringify(userPayload),
-          headers: new Headers({
-            "Content-Type": "application/json",
-          }),
-        });
-        if (!response.ok) {
-          console.log("CURRENT USER PAYLOAD:", userPayload)
-          const errorMessage = `${response.status} (${response.statusText})`;
-          const error = new Error(errorMessage);
-          throw error;
+    if (validateInput(userPayload)) {
+      try {
+        if (Object.keys(errors).length === 0) {
+          const response = await fetch("/api/v1/users", {
+            method: "post",
+            body: JSON.stringify(userPayload),
+            headers: new Headers({
+              "Content-Type": "application/json",
+            }),
+          });
+          if (!response.ok) {
+            console.log("CURRENT USER PAYLOAD:", userPayload);
+            const errorMessage = `${response.status} (${response.statusText})`;
+            const error = new Error(errorMessage);
+            throw error;
+          }
+          const userData = await response.json();
+          setShouldRedirect(true);
         }
-        const userData = await response.json();
-        setShouldRedirect(true);
+      } catch (err) {
+        console.error(`Error in fetch: ${err.message}`);
       }
-    } catch (err) {
-      console.error(`Error in fetch: ${err.message}`);
     }
   };
 
@@ -109,7 +111,12 @@ const RegistrationForm = () => {
         <div>
           <label>
             User Name
-            <input type="text" name="userName" value={userPayload.userName} onChange={onInputChange}/>
+            <input
+              type="text"
+              name="userName"
+              value={userPayload.userName}
+              onChange={onInputChange}
+            />
             <FormError error={errors.userName} />
           </label>
         </div>

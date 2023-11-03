@@ -3,5 +3,7 @@
         "activityBar.background": "#5C0F16",
         "titleBar.activeBackground": "#80141F",
         "titleBar.activeForeground": "#FEFBFB"
-    }
+    },
+    "prettier.semi": false,
+    "prettier.endOfLine": "auto"
 }
