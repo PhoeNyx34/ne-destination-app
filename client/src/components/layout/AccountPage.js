@@ -57,10 +57,14 @@ const AccountPage = (props) => {
     addProfilePicture();
   };
 
-  let uploadImagePromptText = "Edit Profile Image";
+  let uploadImagePromptText = "Click Or Drag Here To Edit Profile Image";
+
+  const handleClick = (event) => {
+    uploadImagePromptText = "Click Or Drag Here To Edit Profile Image";
+  }
 
   if (!_.isEmpty(profilePicture)) {
-    uploadImagePromptText = "We have your image";
+    uploadImagePromptText = "Image received. Click button below to save!";
   }
 
   return (
@@ -86,7 +90,7 @@ const AccountPage = (props) => {
             </div>
           )}
         </Dropzone>
-        <input type="submit" value="Upload Selected Image" />
+        <input type="submit" value="Save Selected Profile Image" onClick={handleClick} />
       </form>
 
       {/* <p>Your old image in the database </p> */}
