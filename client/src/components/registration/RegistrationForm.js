@@ -72,7 +72,6 @@ const RegistrationForm = () => {
             }),
           });
           if (!response.ok) {
-            console.log("CURRENT USER PAYLOAD:", userPayload);
             const errorMessage = `${response.status} (${response.statusText})`;
             const error = new Error(errorMessage);
             throw error;
