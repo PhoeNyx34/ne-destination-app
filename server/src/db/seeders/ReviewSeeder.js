@@ -13,14 +13,14 @@ class ReviewSeeder {
                 destinationId: hampton.id,
                 rating: 2,
                 title: "This place sucks!",
-                reviewContent: "Didn't step on a single needle! What a waste of time."
+                content: "Didn't step on a single needle! What a waste of time."
             },
             {
                 userId: fatboi.id,
                 destinationId: hampton.id,
                 rating: 9,
                 title: "Rats everywhere!",
-                reviewContent: "Fantastic. Great addition to my picnic spread."
+                content: "Fantastic. Great addition to my picnic spread."
             }
         ]
 

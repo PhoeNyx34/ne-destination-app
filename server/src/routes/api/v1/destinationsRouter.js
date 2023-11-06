@@ -17,6 +17,8 @@ destinationsRouter.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const destination = await Destination.query().findById(id);
+    const relatedReviews = await destination.$relatedQuery("reviews")
+    destination.reviews = relatedReviews
     return res.status(200).json({ destination: destination });
   } catch (err) {
     return res.status(500).json({ error: err });

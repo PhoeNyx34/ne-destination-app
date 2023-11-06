@@ -21,7 +21,7 @@ exports.up = async (knex) => {
             .references("destinations.id")
         table.integer("rating").notNullable()
         table.string("title")
-        table.text("reviewContent")
+        table.text("content")
         
         table.timestamp("createdAt").notNullable().defaultTo(knex.fn.now())
         table.timestamp("updatedAt").notNullable().defaultTo(knex.fn.now())
