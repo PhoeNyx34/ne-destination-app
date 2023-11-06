@@ -1,11 +1,12 @@
 import React from "react"
 
-const ReviewTile = ({ title, reviewContent, rating }) => {
+const ReviewTile = ({ title, rating, content }) => {
+  
   return (
     <>
       <h3>{title}</h3>
-      <p>{rating}</p>
-      <p>{reviewContent}</p>
+      <p>Rating: {rating}</p>
+      <p>{content}</p>
     </>
   );
 };

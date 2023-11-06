@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ReviewsSection from "./ReviewsSection"
+import ReviewTile from "./ReviewTile";
 
 const DestinationShow = (props) => {
-  const [destination, setDestination] = useState({});
+  const [destination, setDestination] = useState({
+  });
 
-  const { id, name, type, location, description, website } = destination
+  const { id, name, type, location, description, website, reviews } = destination
 
   const getDestination = async () => {
     const destinationId = props.match.params.id;
@@ -27,6 +28,20 @@ const DestinationShow = (props) => {
     getDestination()
   }, [])
 
+  let reviewsList
+  if (reviews) {
+    reviewsList = reviews.map((reviewItem) => {
+      return (
+        <ReviewTile
+          key={reviewItem.id}
+          title={reviewItem.title}
+          content={reviewItem.content}
+          rating={reviewItem.rating}
+        />
+      );
+    });
+  }
+
   return (
     <>
       <div className="destination">
@@ -37,8 +52,9 @@ const DestinationShow = (props) => {
           <li>{location}</li>
           <li>{website}</li>
         </ul>
+        <h2>Reviews: </h2>
+        {reviewsList}
       </div>
-      <ReviewsSection destinationName={name} destinationId={props.match.params.id} user={props.user} />
     </>
   );
 };
