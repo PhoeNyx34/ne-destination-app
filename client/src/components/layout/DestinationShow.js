@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import ReviewTile from "./ReviewTile"
 
 const DestinationShow = (props) => {
@@ -8,9 +8,9 @@ const DestinationShow = (props) => {
   });
 
   const { id, name, type, location, description, website, reviews } = destination;
+  const { id: destinationId } = useParams()
 
   const getDestination = async () => {
-    const destinationId = props.match.params.id;
     try {
       const response = await fetch(`/api/v1/destinations/${destinationId}`);
       if (!response.ok) {
@@ -50,7 +50,11 @@ const DestinationShow = (props) => {
           <li>{location}</li>
           <li>{website}</li>
         </ul>
-        <Link to={`/destinations/${destination.id}/new-review`}>Submit a New Review</Link>
+        {props.user ? 
+          <Link to={`/destinations/${destination.id}/new-review`}>Submit a New Review</Link> 
+          : 
+          <Link to="/user-sessions/new">Please sign in to leave a review</Link>
+        }
         <h2>Reviews:</h2>
           {reviewsList}
       </div>
