@@ -3,6 +3,7 @@ import ReviewTile from "./ReviewTile";
 
 const DestinationShow = (props) => {
   const [destination, setDestination] = useState({
+    reviews: []
   });
 
   const { id, name, type, location, description, website, reviews } = destination
@@ -28,9 +29,7 @@ const DestinationShow = (props) => {
     getDestination()
   }, [])
 
-  let reviewsList
-  if (reviews) {
-    reviewsList = reviews.map((reviewItem) => {
+   const reviewsList = reviews.map((reviewItem) => {
       return (
         <ReviewTile
           key={reviewItem.id}
@@ -40,22 +39,20 @@ const DestinationShow = (props) => {
         />
       );
     });
-  }
 
   return (
-    <>
-      <div className="destination">
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <ul>
-          <li>{type}</li>
-          <li>{location}</li>
-          <li>{website}</li>
-        </ul>
-        <h2>Reviews: </h2>
-        {reviewsList}
-      </div>
-    </>
+    <div className="destination">
+      <h1>{name}</h1>
+      <p>{description}</p>
+      <ul>
+        <li>{type}</li>
+        <li>{location}</li>
+        <li>{website}</li>
+      </ul>
+      <h2>Reviews: </h2>
+      {reviewsList}
+    </div>
   );
 };
+
 export default DestinationShow;

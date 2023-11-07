@@ -10,4 +10,5 @@ const ReviewTile = ({ title, rating, content }) => {
     </>
   );
 };
+
 export default ReviewTile

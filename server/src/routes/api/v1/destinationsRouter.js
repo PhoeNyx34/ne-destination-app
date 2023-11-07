@@ -41,5 +41,4 @@ destinationsRouter.get("/:id", async (req, res) => {
   }
 });
 
-
 export default destinationsRouter;

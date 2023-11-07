@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import _ from "lodash";
-import Dropzone from "react-dropzone";
+import React, { useState, useEffect } from "react"
+import _ from "lodash"
+import Dropzone from "react-dropzone"
 
 const AccountPage = (props) => {
  
-  const [user, setUser] = useState(props.user); 
-  const [profilePicture, setProfilePicture] = useState({}); 
+  const [user, setUser] = useState(props.user) 
+  const [profilePicture, setProfilePicture] = useState({}) 
   const handleImageUpload = (acceptedImage) => {
     setProfilePicture({
       ...profilePicture,
       image: acceptedImage[0],
-    });
-  };
+    })
+  }
 
   const addProfilePicture = async () => {
-    const newProfilePictureBody = new FormData();
-    newProfilePictureBody.append("image", profilePicture.image);
+    const newProfilePictureBody = new FormData()
+    newProfilePictureBody.append("image", profilePicture.image)
     try {
       const response = await fetch(`/api/v1/users/${profilePicture.id}`, {
         method: "PATCH",
@@ -23,26 +23,26 @@ const AccountPage = (props) => {
           Accept: "image/jpeg",
         },
         body: newProfilePictureBody,
-      });
+      })
       if (!response.ok) {
-        throw new Error(`${response.status} (${response.statusText})`);
+        throw new Error(`${response.status} (${response.statusText})`)
       }
-      const body = await response.json();
-      setUser({ ...user, image: body.user.image });
+      const body = await response.json()
+      setUser({ ...user, image: body.user.image })
     } catch (error) {
-      console.error(`Error in addProfilePicture Fetch: ${error.message}`);
+      console.error(`Error in addProfilePicture Fetch: ${error.message}`)
     }
-  };
+  }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    addProfilePicture();
-  };
+    event.preventDefault()
+    addProfilePicture()
+  }
 
-  let uploadImagePromptText = "Click Or Drag Here To Edit Profile Image";
+  let uploadImagePromptText = "Click Or Drag Here To Edit Profile Image"
 
   if (!_.isEmpty(profilePicture)) {
-    uploadImagePromptText = "Image received. Click button below to save!";
+    uploadImagePromptText = "Image received. Click button below to save!"
   }
 
   return (
@@ -70,4 +70,4 @@ const AccountPage = (props) => {
   )
 }
 
-export default AccountPage;
+export default AccountPage
