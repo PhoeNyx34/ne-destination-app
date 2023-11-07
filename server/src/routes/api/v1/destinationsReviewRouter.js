@@ -6,21 +6,8 @@ const { ValidationError } = objection
 
 const destinationReviewsRouter = new express.Router({ mergeParams: true})
 
-destinationReviewsRouter.get("/", async (req, res) => {
-    const { destinationId } = req.params
-    
-    try {
-        const destination = await Destination.query().findById(destinationId)
-        const relevantReviews = await destination.$relatedQuery("reviews")
-        return res.status(200).json({ reviews: relevantReviews })
-    } catch (err) {
-        return res.status(500).json({ errors: err })
-    }
-})
-
 destinationReviewsRouter.post("/", async (req, res) => {
     const formInput = cleanUserInput(req.body)
-    console.log(formInput)
     try { 
         const destination = await Destination.query().findById(formInput.destinationId)
         const newDestinationReview = await destination.$relatedQuery("reviews").insertAndFetch(formInput)

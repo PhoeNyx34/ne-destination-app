@@ -31,15 +31,12 @@ const DestinationsIndex = (props) => {
         )
     })
 
-    
-
     return (
         <>
             <h1>Destinations!</h1>
             {destinationTiles}
         </>
     )
-
 }
 
 export default DestinationsIndex

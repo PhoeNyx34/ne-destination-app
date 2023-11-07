@@ -6,7 +6,6 @@ import ErrorList from "./ErrorList"
 
 const NewReviewForm = (props) => {
     const { id } = useParams()
-    let ratingValue = ""
     
     const [newReview, setNewReview] = useState({
         userId: props.user.id,
@@ -43,7 +42,6 @@ const NewReviewForm = (props) => {
             console.error(`Error in fetch: ${err.message}`)
         }
     }
-
     
     const handleSubmit = event => {
         event.preventDefault()
