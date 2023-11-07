@@ -55,8 +55,45 @@ body {
   font-weight: bold;
 }
 
-.custom-button:hover {
+.custom-button:hover, .nav-option:hover {
     background-color: #EDF6F9;
     color: #006D77;
-    border: 1px solid #006D77;
+}
+
+.custom-button:focus, .nav-option:focus {
+    background-color: #006D77;
+    color: #EDF6F9;
+}
+
+.custom-button:hover {
+  border: 1px solid #006D77;
+}
+
+.top-bar {
+  border: 1px solid #006D77;
+}
+
+.top-bar, .top-bar ul {
+  background-color: #83C5BE;
+}
+
+.menu {
+  background-color: #FFDDD2;
+}
+
+.nav-option {
+  background-color: #006D77;
+  color: #EDF6F9;
+}
+
+.sign-in {
+  color: #006D77;
+}
+
+.sign-in:hover {
+  color: #EDF6F9;
+}
+
+.sign-in:focus {
+  color: #006D77;
 }
