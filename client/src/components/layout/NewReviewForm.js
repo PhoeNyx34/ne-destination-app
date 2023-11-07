@@ -3,7 +3,6 @@ import { useParams, Redirect } from "react-router-dom"
 import translateServerErrors from "../../services/translateServerErrors"
 import ErrorList from "./ErrorList"
 
-
 const NewReviewForm = (props) => {
     const { id } = useParams()
     
