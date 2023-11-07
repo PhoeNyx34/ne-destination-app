@@ -20,7 +20,7 @@ const NewReviewForm = (props) => {
         try {
             const response = await fetch(`/api/v1/destinations/${newReview.destinationId}/reviews`, 
                 {method: "POST", 
-                headers: {"Content-Type": "application/json"}, 
+                headers: new Headers({"Content-Type": "application/json"}), 
                 body: JSON.stringify(newReview)
                 }
             )
