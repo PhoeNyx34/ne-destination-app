@@ -7,18 +7,17 @@ const NewReviewForm = (props) => {
     const { id } = useParams()
     
     const [newReview, setNewReview] = useState({
-        userId: props.user.id,
-        destinationId: id,
         title: "",
         rating: "",
         content: ""
     })
+    
     const [errors, setErrors] = useState([])
     const [shouldRedirect, setShouldRedirect] = useState(false)
 
     const addNewReview = async () => {
         try {
-            const response = await fetch(`/api/v1/destinations/${newReview.destinationId}/reviews`, 
+            const response = await fetch(`/api/v1/destinations/${id}/reviews`, 
                 {method: "POST", 
                 headers: new Headers({"Content-Type": "application/json"}), 
                 body: JSON.stringify(newReview)
@@ -48,7 +47,7 @@ const NewReviewForm = (props) => {
     }
 
     if (shouldRedirect) {
-        return <Redirect push to={`/destinations/${newReview.destinationId}`}/>
+        return <Redirect push to={`/destinations/${id}`}/>
     }
 
     const handleInputChange = (event) => {
@@ -69,11 +68,51 @@ const NewReviewForm = (props) => {
                 <fieldset>
                     <legend>Please select your rating:</legend>
                         <div className="rating-buttons">
-                            <input id="rating1" type="radio" name="rating" value="1" onChange={handleInputChange}/><label htmlFor="rating1">1</label>
-                            <input id="rating2" type="radio" name="rating" value="2" onChange={handleInputChange}/><label htmlFor="rating2">2</label>
-                            <input id="rating3" type="radio" name="rating" value="3" onChange={handleInputChange}/><label htmlFor="rating3">3</label>
-                            <input id="rating4" type="radio" name="rating" value="4" onChange={handleInputChange}/><label htmlFor="rating4">4</label>
-                            <input id="rating5" type="radio" name="rating" value="5" onChange={handleInputChange}/><label htmlFor="rating5">5</label>
+                            <input 
+                                id="rating1" 
+                                type="radio" 
+                                name="rating" 
+                                value="1"
+                                onChange={handleInputChange}
+                                checked={newReview.rating === "1"}
+                            />
+                            <label htmlFor="rating1">1</label>
+                            <input 
+                                id="rating2" 
+                                type="radio" 
+                                name="rating" 
+                                value="2" 
+                                onChange={handleInputChange}
+                                checked={newReview.rating === "2"}
+                                />
+                            <label htmlFor="rating2">2</label>
+                            <input 
+                                id="rating3" 
+                                type="radio" 
+                                name="rating" 
+                                value="3" 
+                                onChange={handleInputChange}
+                                checked={newReview.rating === "3"}
+                                />
+                            <label htmlFor="rating3">3</label>
+                            <input 
+                                id="rating4" 
+                                type="radio" 
+                                name="rating" 
+                                value="4" 
+                                onChange={handleInputChange}
+                                checked={newReview.rating === "4"}
+                                />
+                            <label htmlFor="rating4">4</label>
+                            <input 
+                                id="rating5" 
+                                type="radio" 
+                                name="rating" 
+                                value="5" 
+                                onChange={handleInputChange}
+                                checked={newReview.rating === "5"}
+                                />
+                            <label htmlFor="rating5">5</label>
                         </div>
                     </fieldset>
                 <input type="Submit"/>

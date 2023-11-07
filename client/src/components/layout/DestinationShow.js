@@ -41,8 +41,7 @@ const DestinationShow = (props) => {
     )
   })
 
-  return (
-    <>  
+  return ( 
       <div className="destination">
         <h1>{name}</h1>
         <p>{description}</p>
@@ -55,7 +54,6 @@ const DestinationShow = (props) => {
         <h2>Reviews:</h2>
           {reviewsList}
       </div>
-    </>
   );
 };
 
