@@ -10,7 +10,7 @@ import TopBar from "./layout/TopBar";
 import DestinationsIndex from "./layout/DestinationsIndex";
 import NewDestinationForm from "./layout/NewDestinationForm";
 import DestinationShow from "./layout/DestinationShow";
-import AuthenticatedRoute from "./authentication/AuthenticatedRoute"
+import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 import NewReviewForm from "./layout/NewReviewForm";
 
 const App = (props) => {
@@ -33,8 +33,19 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/" component={DestinationsIndex} />
-        <AuthenticatedRoute exact path="/destinations/:id/new-review" component={NewReviewForm} user={currentUser}/>
+        <AuthenticatedRoute
+          exact
+          path="/destinations/:id/new-review"
+          component={NewReviewForm}
+          user={currentUser}
+        />
         <Route exact path="/destinations/new" component={NewDestinationForm} />
+        <AuthenticatedRoute
+          exact
+          path="/destinations/:id/new-review"
+          component={NewReviewForm}
+          user={currentUser}
+        />
         <Route exact path="/destinations/:id">
           <DestinationShow user={currentUser}/>
         </Route>

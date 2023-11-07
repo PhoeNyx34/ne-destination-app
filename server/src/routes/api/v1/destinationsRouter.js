@@ -4,7 +4,6 @@ import destinationReviewsRouter from "./destinationsReviewRouter.js";
 import objection from "objection";
 const { ValidationError } = objection;
 import cleanUserInput from "../../../services/cleanUserInput.js";
-
 const destinationsRouter = new express.Router();
 
 destinationsRouter.get("/", async (req, res) => {
@@ -34,14 +33,14 @@ destinationsRouter.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const destination = await Destination.query().findById(id);
-    const relatedReviews = await destination.$relatedQuery("reviews")
-    destination.reviews = relatedReviews
+    const relatedReviews = await destination.$relatedQuery("reviews");
+    destination.reviews = relatedReviews;
     return res.status(200).json({ destination: destination });
   } catch (err) {
     return res.status(500).json({ error: err });
   }
 });
 
-destinationsRouter.use("/:destinationId/reviews", destinationReviewsRouter)
+destinationsRouter.use("/:destinationId/reviews", destinationReviewsRouter);
 
 export default destinationsRouter;
