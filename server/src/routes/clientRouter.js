@@ -9,7 +9,9 @@ const clientRoutes = [
   "/users/new",
   "/destinations/new",
   "/destinations/:id",
+  "/destinations/:id/new-review",
 ];
+
 const authedClientRoutes = ["/profile"];
 
 router.get(authedClientRoutes, (req, res) => {
