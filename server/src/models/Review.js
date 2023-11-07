@@ -14,7 +14,7 @@ class Review extends Model {
                 destinationId: { type: ["integer", "string"] },
                 rating: { type: ["integer", "string"] },
                 title: { type: "string" },
-                reviewContent: { type: "string" }
+                content: { type: "string" }
 
             }
         }

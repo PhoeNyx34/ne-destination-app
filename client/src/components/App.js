@@ -33,11 +33,17 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/" component={DestinationsIndex} />
+<<<<<<< HEAD
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+=======
+        <AuthenticatedRoute exact path="/destinations/:id/new-review" component={NewReviewForm} user={currentUser}/>
+>>>>>>> e50b4b83eb7282a30e94f404fd7dab70c275b98a
         <Route exact path="/destinations/new" component={NewDestinationForm} />
          <AuthenticatedRoute exact path="/destinations/:id/new-review" component={NewReviewForm} user={currentUser}/>
         <Route exact path="/destinations/:id" component={DestinationShow} />
+        <Route exact path="/users/new" component={RegistrationForm} />
+        <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
     </Router>
   );
