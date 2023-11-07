@@ -11,7 +11,7 @@ const NewReviewForm = (props) => {
         rating: "",
         content: ""
     })
-    
+
     const [errors, setErrors] = useState([])
     const [shouldRedirect, setShouldRedirect] = useState(false)
 
@@ -57,6 +57,22 @@ const NewReviewForm = (props) => {
         })
     }
 
+    const ratings = ["1", "2", "3", "4", "5"];
+
+    const radioButtons = ratings.map((rating) => (
+    <>
+        <input 
+        id={`rating${rating}`} 
+        type="radio" 
+        name="rating" 
+        value={rating} 
+        onChange={handleInputChange}
+        checked={newReview.rating === rating}
+        />
+        <label htmlFor={`rating${rating}`}>{rating}</label>
+    </>
+    ))
+
     return (
         <>
             <h1>Submit a Review</h1>
@@ -68,51 +84,7 @@ const NewReviewForm = (props) => {
                 <fieldset>
                     <legend>Please select your rating:</legend>
                         <div className="rating-buttons">
-                            <input 
-                                id="rating1" 
-                                type="radio" 
-                                name="rating" 
-                                value="1"
-                                onChange={handleInputChange}
-                                checked={newReview.rating === "1"}
-                            />
-                            <label htmlFor="rating1">1</label>
-                            <input 
-                                id="rating2" 
-                                type="radio" 
-                                name="rating" 
-                                value="2" 
-                                onChange={handleInputChange}
-                                checked={newReview.rating === "2"}
-                                />
-                            <label htmlFor="rating2">2</label>
-                            <input 
-                                id="rating3" 
-                                type="radio" 
-                                name="rating" 
-                                value="3" 
-                                onChange={handleInputChange}
-                                checked={newReview.rating === "3"}
-                                />
-                            <label htmlFor="rating3">3</label>
-                            <input 
-                                id="rating4" 
-                                type="radio" 
-                                name="rating" 
-                                value="4" 
-                                onChange={handleInputChange}
-                                checked={newReview.rating === "4"}
-                                />
-                            <label htmlFor="rating4">4</label>
-                            <input 
-                                id="rating5" 
-                                type="radio" 
-                                name="rating" 
-                                value="5" 
-                                onChange={handleInputChange}
-                                checked={newReview.rating === "5"}
-                                />
-                            <label htmlFor="rating5">5</label>
+                            {radioButtons}
                         </div>
                     </fieldset>
                 <input type="Submit"/>
