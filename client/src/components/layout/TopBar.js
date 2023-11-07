@@ -19,7 +19,7 @@ const TopBar = ({ user }) => {
       <SignOutButton />
     </li>,
     <li>
-      <Link to="/profile"/>
+      <Link to="/profile" className="sign-in">My Account</Link>
     </li>
   ];
 
