@@ -6,7 +6,7 @@ const Model = require("./Model");
 const saltRounds = 10;
 
 const uniqueFunc = unique({
-  fields: ["email"],
+  fields: ["email", "userName"],
   identifiers: ["id"],
 });
 
@@ -31,13 +31,13 @@ class User extends uniqueFunc(Model) {
         email: { type: "string", pattern: "^\\S+@\\S+\\.\\S+$" },
         cryptedPassword: { type: "string" },
         userName: { type: "string" },
-        image: { type: "string" }
+        image: { type: "string" },
       },
     };
   }
 
   static get relationMappings() {
-    const { Review } = require("./index.js")
+    const { Review } = require("./index.js");
 
     return {
       reviews: {
@@ -45,15 +45,14 @@ class User extends uniqueFunc(Model) {
         modelClass: Review,
         join: {
           from: "users.id",
-          to: "reviews.userId"
-        }
-      }
-    }
+          to: "reviews.userId",
+        },
+      },
+    };
   }
 
   $formatJson(json) {
     const serializedJson = super.$formatJson(json);
-
     if (serializedJson.cryptedPassword) {
       delete serializedJson.cryptedPassword;
     }

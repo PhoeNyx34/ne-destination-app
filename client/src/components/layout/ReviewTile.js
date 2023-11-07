@@ -1,7 +1,6 @@
-import React from "react"
+import React from "react";
 
 const ReviewTile = ({ title, rating, content }) => {
-  
   return (
     <>
       <h3>{title}</h3>
@@ -11,4 +10,4 @@ const ReviewTile = ({ title, rating, content }) => {
   );
 };
 
-export default ReviewTile
+export default ReviewTile;

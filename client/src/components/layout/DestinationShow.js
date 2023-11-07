@@ -3,10 +3,10 @@ import ReviewTile from "./ReviewTile";
 
 const DestinationShow = (props) => {
   const [destination, setDestination] = useState({
-    reviews: []
+    reviews: [],
   });
 
-  const { id, name, type, location, description, website, reviews } = destination
+  const { id, name, type, location, description, website, reviews } = destination;
 
   const getDestination = async () => {
     const destinationId = props.match.params.id;
@@ -26,19 +26,19 @@ const DestinationShow = (props) => {
   };
 
   useEffect(() => {
-    getDestination()
-  }, [])
+    getDestination();
+  }, []);
 
-   const reviewsList = reviews.map((reviewItem) => {
-      return (
-        <ReviewTile
-          key={reviewItem.id}
-          title={reviewItem.title}
-          content={reviewItem.content}
-          rating={reviewItem.rating}
-        />
-      );
-    });
+  const reviewsList = reviews.map((reviewItem) => {
+    return (
+      <ReviewTile
+        key={reviewItem.id}
+        title={reviewItem.title}
+        content={reviewItem.content}
+        rating={reviewItem.rating}
+      />
+    );
+  });
 
   return (
     <div className="destination">

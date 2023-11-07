@@ -5,5 +5,8 @@
         "titleBar.activeForeground": "#FEFBFB"
     },
     "prettier.semi": false,
-    "prettier.endOfLine": "auto"
+    "prettier.endOfLine": "lf",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true
 }
