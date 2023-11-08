@@ -15,11 +15,11 @@ const TopBar = ({ user }) => {
   ];
 
   const authenticatedListItems = [
-    <li key="sign-out">
-      <SignOutButton />
-    </li>,
     <li>
       <Link to="/profile" className="sign-in">My Account</Link>
+    </li>,
+    <li key="sign-out">
+      <SignOutButton />
     </li>
   ];
 

@@ -12,6 +12,10 @@ body {
   background-color: #EDF6F9;
 }
 
+.not-nav {
+  margin: 0 5em;
+}
+
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
@@ -23,7 +27,7 @@ body {
   color: #006D77;
 }
 
-.small-4 {
+.tile-style {
   padding: 1em;
   margin: 0 .5em;
   background-color: white;
@@ -70,12 +74,15 @@ body {
   border: 1px solid #006D77;
 }
 
+
+
 .top-bar {
   border: 1px solid #006D77;
-}
-
-.top-bar, .top-bar ul {
   background-color: #83C5BE;
+
+  ul {
+    background-color: #83C5BE;
+  }
 }
 
 .menu {

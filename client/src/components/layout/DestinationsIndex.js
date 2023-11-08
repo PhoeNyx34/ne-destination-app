@@ -35,13 +35,11 @@ const DestinationsIndex = (props) => {
     
 
     return (
-        <div className="grid-container">
-            <div className="grid-x grid-margin-x">
+            <div className="grid-x grid-margin-x not-nav">
                 <h1 className="page-header cell small-9">Beaches!</h1>
                 <Link to="/destinations/new" className="new-destination custom-button cell auto">Add a new beach</Link>
                 {destinationTiles}
             </div>
-        </div>
     )
 
 }
