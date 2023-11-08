@@ -34,12 +34,18 @@ const DestinationShow = (props) => {
     return (
       <ReviewTile
         key={reviewItem.id}
+        reviewId={reviewItem.id}
         title={reviewItem.title}
         content={reviewItem.content}
         rating={reviewItem.rating}
+        destination={destination}
+        setDestination={setDestination}
+        user={props.user}
+        reviewUserId={reviewItem.userId}
       />
     );
   });
+  console.l;
 
   return (
     <div className="destination">
