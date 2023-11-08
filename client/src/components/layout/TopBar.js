@@ -17,7 +17,7 @@ const TopBar = ({ user }) => {
   ];
 
   const authenticatedListItems = [
-    <li>
+    <li key="profile">
       <Link to="/profile" className="sign-in">
         My Account
       </Link>
