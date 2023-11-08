@@ -4,6 +4,7 @@ import destinationReviewsRouter from "./destinationsReviewRouter.js";
 import objection from "objection";
 const { ValidationError } = objection;
 import cleanUserInput from "../../../services/cleanUserInput.js";
+
 const destinationsRouter = new express.Router();
 
 destinationsRouter.get("/", async (req, res) => {

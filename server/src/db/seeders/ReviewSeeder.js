@@ -11,15 +11,16 @@ class ReviewSeeder {
         userId: tess.id,
         destinationId: hampton.id,
         rating: 2,
-        title: "This place sucks!",
+        title: "This place sucks",
         content: "Didn't step on a single needle! What a waste of time.",
       },
       {
         userId: fatboi.id,
         destinationId: hampton.id,
-        rating: 9,
-        title: "Rats everywhere!",
-        content: "Fantastic. Great addition to my picnic spread.",
+        rating: 1,
+        title: "Rats everywhere",
+        content:
+          "There were so many rats all over the beach. It was a horrible experience. I don't think I will return",
       },
     ];
 

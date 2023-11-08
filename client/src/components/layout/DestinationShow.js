@@ -45,7 +45,6 @@ const DestinationShow = (props) => {
       />
     );
   });
-  console.l;
 
   return (
     <div className="destination">
