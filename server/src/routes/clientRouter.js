@@ -7,8 +7,10 @@ const clientRoutes = [
   "/",
   "/user-sessions/new",
   "/users/new",
-  "/destinations/:id"
-  ];
+  "/destinations/new",
+  "/destinations/:id",
+  "/destinations/:id/new-review",
+];
 
 const authedClientRoutes = ["/profile"];
 

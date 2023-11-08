@@ -11,6 +11,7 @@ import NewDestinationForm from "./layout/NewDestinationForm";
 import DestinationShow from "./layout/DestinationShow";
 import AccountPage from "./layout/AccountPage";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
+import NewReviewForm from "./layout/NewReviewForm";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -35,13 +36,21 @@ const App = (props) => {
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
         <Route exact path="/destinations/new" component={NewDestinationForm} />
-        <Route exact path="/destinations/:id" component={DestinationShow} />
+        <Route exact path="/destinations/:id">
+          <DestinationShow user={currentUser} />
+        </Route>
         <AuthenticatedRoute
           exact
           path="/profile"
           component={AccountPage}
           user={currentUser}
           setCurrentUser={setCurrentUser}
+        />
+        <AuthenticatedRoute
+          exact
+          path="/destinations/:id/new-review"
+          component={NewReviewForm}
+          user={currentUser}
         />
       </Switch>
     </Router>

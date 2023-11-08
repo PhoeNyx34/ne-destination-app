@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import DestinationTile from "./DestinationTile";
 
 const DestinationsIndex = (props) => {
@@ -29,10 +30,13 @@ const DestinationsIndex = (props) => {
   });
 
   return (
-    <>
-      <h1>Destinations!</h1>
+    <div className="grid-x grid-margin-x not-nav">
+      <h1 className="page-header cell small-9">Beaches!</h1>
+      <Link to="/destinations/new" className="new-destination custom-button cell auto">
+        Add a new beach
+      </Link>
       {destinationTiles}
-    </>
+    </div>
   );
 };
 

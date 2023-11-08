@@ -32,6 +32,9 @@ usersRouter.patch("/:id", uploadImage.single("image"), async (req, res) => {
     });
     return res.status(201).json({ user: updatedUser });
   } catch (error) {
+    if (error instanceof ValidationError) {
+      return res.status(422).json({ errors: error.data });
+    }
     return res.status(500).json({ errors: error });
   }
 });

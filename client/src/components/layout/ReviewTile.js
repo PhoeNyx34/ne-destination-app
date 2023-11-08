@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReviewTile = ({ title, rating, content }) => {
+const ReviewTile = ({ title, content, rating }) => {
   return (
     <>
       <h3>{title}</h3>

@@ -4,7 +4,6 @@ class ReviewSeeder {
     static async seed() {
         const tess = await User.query().findOne({email: "tess.ting@gmail.com"})
         const fatboi = await User.query().findOne({email: "fatboislimjim@gmail.com"})
-
         const hampton = await Destination.query().findOne({name: "Hampton Beach"})
         
         const reviewsData = [
