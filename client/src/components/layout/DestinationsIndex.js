@@ -32,8 +32,6 @@ const DestinationsIndex = (props) => {
         )
     })
 
-    
-
     return (
             <div className="grid-x grid-margin-x not-nav">
                 <h1 className="page-header cell small-9">Beaches!</h1>
@@ -41,7 +39,6 @@ const DestinationsIndex = (props) => {
                 {destinationTiles}
             </div>
     )
-
 }
 
 export default DestinationsIndex
