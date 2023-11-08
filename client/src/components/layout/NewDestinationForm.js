@@ -57,7 +57,7 @@ const NewDestinationForm = (props) => {
   }
 
   return (
-    <>
+    <div className="grid-container">
       <h1>Add New Destination!</h1>
       <ErrorList errors={errors} />
       <form onSubmit={handleOnSubmit}>
@@ -103,7 +103,7 @@ const NewDestinationForm = (props) => {
         </label>
         <input type="submit" name="Submit" value="Add new Destination" />
       </form>
-    </>
+    </div>
   );
 };
 

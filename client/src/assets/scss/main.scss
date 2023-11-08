@@ -8,8 +8,100 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #EDF6F9;
+}
+
+.not-nav {
+  margin: 0 5em;
+}
+
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
 }
 
+.page-header {
+  text-align: left;
+  display: inline;
+  color: #006D77;
+}
+
+.tile-style {
+  padding: 1em;
+  margin: 0 .5em;
+  background-color: white;
+  border: 1px solid #006D77;
+  margin: 1em 0 1em 0;
+}
+
+.icon {
+  height: 5em;
+  width: 5em;
+  float: right;
+}
+
+.tile-name {
+  display: inline;
+}
+
+.custom-button {
+  float: right;
+  background-color: #006D77;
+  color: #EDF6F9;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 1em;
+  height: 40px;
+  width: 70px;
+  text-align: center;
+  margin: auto 1px;
+  padding: 7px 0;
+  font-weight: bold;
+}
+
+.custom-button:hover, .nav-option:hover {
+    background-color: #EDF6F9;
+    color: #006D77;
+}
+
+.custom-button:focus, .nav-option:focus {
+    background-color: #006D77;
+    color: #EDF6F9;
+}
+
+.custom-button:hover {
+  border: 1px solid #006D77;
+}
+
+
+
+.top-bar {
+  border: 1px solid #006D77;
+  background-color: #83C5BE;
+
+  ul {
+    background-color: #83C5BE;
+  }
+}
+
+.menu {
+  background-color: #FFDDD2;
+}
+
+.nav-option {
+  background-color: #006D77;
+  color: #EDF6F9;
+}
+
+.sign-in {
+  color: #006D77;
+}
+
+.sign-in:hover {
+  color: #EDF6F9;
+}
+
+.sign-in:focus {
+  color: #006D77;
+}
