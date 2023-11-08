@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { hot } from "react-hot-loader/root";
-
 import getCurrentUser from "../services/getCurrentUser";
 import "../assets/scss/main.scss";
 import RegistrationForm from "./registration/RegistrationForm";
@@ -10,6 +9,7 @@ import TopBar from "./layout/TopBar";
 import DestinationsIndex from "./layout/DestinationsIndex";
 import NewDestinationForm from "./layout/NewDestinationForm";
 import DestinationShow from "./layout/DestinationShow";
+import AccountPage from "./layout/AccountPage";
 import AuthenticatedRoute from "./authentication/AuthenticatedRoute";
 import NewReviewForm from "./layout/NewReviewForm";
 
@@ -33,24 +33,25 @@ const App = (props) => {
       <TopBar user={currentUser} />
       <Switch>
         <Route exact path="/" component={DestinationsIndex} />
-        <AuthenticatedRoute
-          exact
-          path="/destinations/:id/new-review"
-          component={NewReviewForm}
-          user={currentUser}
-        />
-        <Route exact path="/destinations/new" component={NewDestinationForm} />
-        <AuthenticatedRoute
-          exact
-          path="/destinations/:id/new-review"
-          component={NewReviewForm}
-          user={currentUser}
-        />
-        <Route exact path="/destinations/:id">
-          <DestinationShow user={currentUser}/>
-        </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/destinations/new" component={NewDestinationForm} />
+        <Route exact path="/destinations/:id">
+          <DestinationShow user={currentUser} />
+        </Route>
+        <AuthenticatedRoute
+          exact
+          path="/profile"
+          component={AccountPage}
+          user={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
+        <AuthenticatedRoute
+          exact
+          path="/destinations/:id/new-review"
+          component={NewReviewForm}
+          user={currentUser}
+        />
       </Switch>
     </Router>
   );

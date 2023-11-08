@@ -30,7 +30,6 @@ class Destination extends Model {
           from: "destinations.id",
           to: "reviews.destinationId"
         }
-
       }
     }
   }

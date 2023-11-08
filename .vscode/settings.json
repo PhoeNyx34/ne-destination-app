@@ -3,5 +3,10 @@
         "activityBar.background": "#5C0F16",
         "titleBar.activeBackground": "#80141F",
         "titleBar.activeForeground": "#FEFBFB"
-    }
+    },
+    "prettier.semi": false,
+    "prettier.endOfLine": "lf",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": true
 }
