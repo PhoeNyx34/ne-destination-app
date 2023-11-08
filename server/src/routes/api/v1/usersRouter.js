@@ -25,7 +25,6 @@ usersRouter.post("/", async (req, res) => {
 });
 
 usersRouter.patch("/:id", uploadImage.single("image"), async (req, res) => {
-  const currentId = req.params.id;
   try {
     const data = req.file?.location;
     const updatedUser = await req.user.$query().patchAndFetch({
