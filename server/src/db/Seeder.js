@@ -7,7 +7,6 @@ import VoteSeeder from "./seeders/VoteSeeder.js"
 
 class Seeder {
   static async seed() {
-    // include individual seed commands here
     console.log("seeding destinations...")
     await DestinationSeeder.seed()
 

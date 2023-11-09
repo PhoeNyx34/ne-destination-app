@@ -4,8 +4,9 @@ import { Destination, Review } from "../../../models/index.js";
 import destinationReviewsRouter from "./destinationsReviewRouter.js";
 import objection from "objection";
 const { ValidationError } = objection;
-import cleanUserInput from "../../../services/cleanUserInput.js";
+import cleanUserInput from "../../../services/cleanUserInput.js"
 import ReviewSerializer from "../../../serializers/ReviewSerializer.js";
+
 const destinationsRouter = new express.Router();
 
 destinationsRouter.get("/", async (req, res) => {
