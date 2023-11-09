@@ -58,18 +58,36 @@ const NewDestinationForm = (props) => {
 
   return (
     <div className="grid-container">
-      <h1>Add New Destination!</h1>
+      <h1 className="form-title">New Destination Form</h1>
       <ErrorList errors={errors} />
-      <form onSubmit={handleOnSubmit}>
+      <form onSubmit={handleOnSubmit} className="form-label">
+        <label>
+          Type
+          <input
+            className="form-input-single
+            "
+            type="text"
+            name="type"
+            onChange={handleInputChange}
+            value={newDestination.type}
+          />
+        </label>
         <label>
           {" "}
           Name
-          <input type="text" name="name" onChange={handleInputChange} value={newDestination.name} />
+          <input
+            className="form-input-single"
+            type="text"
+            name="name"
+            onChange={handleInputChange}
+            value={newDestination.name}
+          />
         </label>
         <label>
           {" "}
           Location
           <input
+            className="form-input-single"
             type="text"
             name="location"
             onChange={handleInputChange}
@@ -80,6 +98,7 @@ const NewDestinationForm = (props) => {
           {" "}
           Website
           <input
+            className="form-input-single"
             type="text"
             name="website"
             onChange={handleInputChange}
@@ -90,6 +109,7 @@ const NewDestinationForm = (props) => {
           {" "}
           Description
           <input
+            className="form-input-multi"
             type="text"
             name="description"
             onChange={handleInputChange}
@@ -97,11 +117,12 @@ const NewDestinationForm = (props) => {
           />
         </label>
 
-        <label>
-          Type:
-          <input type="text" name="type" onChange={handleInputChange} value={newDestination.type} />
-        </label>
-        <input type="submit" name="Submit" value="Add new Destination" />
+        <input
+          className="form-submit-button "
+          type="submit"
+          name="Submit"
+          value="Add new Destination"
+        />
       </form>
     </div>
   );

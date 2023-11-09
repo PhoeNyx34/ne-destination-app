@@ -3,9 +3,9 @@ import React from "react";
 const ReviewTile = ({ title, content, rating }) => {
   return (
     <>
-      <h3>{title}</h3>
-      <p>Rating: {rating}</p>
-      <p>{content}</p>
+      <h4>{title}</h4>
+      <p className="form-label">{content}</p>
+      <p className="form-label">Rating: {rating}</p>
     </>
   );
 };

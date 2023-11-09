@@ -75,25 +75,26 @@ const NewReviewForm = (props) => {
   return (
     <>
       <div className="grid-container">
-        <h2 className="form-title">Submit a Review</h2>
+        <h1 className="form-title">New Review Form</h1>
+
         <ErrorList errors={errors} />
-        <form onSubmit={handleSubmit} className="form-inputField">
+
+        <form onSubmit={handleSubmit}>
           <label className="form-label">Title</label>
           <input
+            className="form-input-single"
             name="title"
             value={newReview.title}
             type="text"
-            // placeholder="Add a Review Title!"
             onChange={handleInputChange}
           />
 
           <label className="form-label">Your Review</label>
           <input
-            className="form-field-multiline"
+            className="form-input-multi"
             name="content"
             value={newReview.content}
             type="text"
-            // placeholder="Add your review content here!"
             onChange={handleInputChange}
           />
           <fieldset>

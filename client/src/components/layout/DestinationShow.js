@@ -42,10 +42,10 @@ const DestinationShow = (props) => {
   });
 
   return (
-    <div className="destination">
-      <h1>{name}</h1>
-      <p>{description}</p>
-      <ul>
+    <div className="grid-container">
+      <h1 className="form-title">{name}</h1>
+      <h5 className="form-label">{description}</h5>
+      <ul className="form-label">
         <li>{type}</li>
         <li>{location}</li>
         <li>{website}</li>
@@ -55,7 +55,7 @@ const DestinationShow = (props) => {
       ) : (
         <Link to="/user-sessions/new">Please sign in to leave a review</Link>
       )}
-      <h2>Reviews:</h2>
+      <h2 className="form-title">Reviews</h2>
       {reviewsList}
     </div>
   );

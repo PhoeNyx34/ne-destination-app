@@ -22,6 +22,7 @@ body {
 }
 
 .page-header {
+  font-family: 'DM Serif Display';
   text-align: left;
   display: inline;
   color: #006D77;
@@ -51,13 +52,14 @@ body {
   color: #EDF6F9;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 1em;
+  border-radius: .2em;
   height: 40px;
   width: 70px;
   text-align: center;
   margin: auto 1px;
   padding: 7px 0;
   font-weight: bold;
+  font-family:'Proxima Nova'
 }
 
 .custom-button:hover, .nav-option:hover {
@@ -105,53 +107,58 @@ body {
 }
 
 .form-title {
-  text-align: center;
-    display: inline;
-    // color: #006D77;
   color: #2b2d42;
-  // color: #006D77;
-  font-family: 'DM Serif Display'
-}
-
-
-.form-inputField {
-  color: #2b2d42;
-  height: 40px;
-  width: 600px;    
-    margin: auto 1px;
-      padding: 7px 0;
-  // background-color: white;
-}
-
-.form-field-multiline {
-  height: 100px;
-  width: 600px;
-  padding: 10px 10px 10px 10px;
-  font-family: 'Muli';
-  font-weight: bold;
+  font-family: 'DM Serif Display';
+  text-align: left;
+  padding: 10px 0;
+  align-items: left;
+  justify-content: left;
 }
 
 .form-label {
   color: #006D77;
-  font-family: 'Red Hat Text';
-  font-size: 12px
+  font-family: 'Proxima Nova';
+  font-size: 18px;
+  text-align: left;
+  padding: 0px 0px 0px 0px;
+}
+
+
+.form-input-single {
+  color: #2b2d42;
+  border-color: #abd7d2;
+  height: 40px;
+  width: 500px;
+  padding: 7px 0px 12px 0px;
+  border-radius: .2em;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-input-multi {
+  color: #2b2d42;
+  border-color: #abd7d2;
+  height: 100px;
+  width: 500px;
+  padding: 7px 0 10px 0px;
+  border-radius: .2em;
+  align-content: center;
+  justify-content: center;
 
 }
 
+
 .form-submit-button {
-  // input-border: 
   background-color: #006D77;
   color: #EDF6F9;
   text-transform: uppercase;
   border-radius: .2em;
   height: 40px;
-  width: 100px;
-    // text-align: center;
-    // margin: auto 1px;
-    // padding: 7px 0;
-
-  font-family: 'Red Hat Text';
-
-  //font-weight: bold;
+  width: auto;
+  margin: 50px 1px;
+  padding: 50px 50;
+  font-family: 'Proxima Nova';
+  font-weight: bold;
+  border-style: none;
   }
 

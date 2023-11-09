@@ -5,21 +5,24 @@ class DestinationSeeder {
     const destinationData = [
       {
         name: "Hampton Beach",
-        description: "lots of sad times",
+        description:
+          "lLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         location: "Hampton, NH",
         type: "beach",
         website: "https://hamptonbeach.org/",
       },
       {
         name: "Malibu Beach",
-        description: "Not what you think",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
         location: "Boston, MA",
         type: "beach",
         website: "https://www.mass.gov/locations/savin-hill-and-malibu-beach",
       },
       {
         name: "Cranes Beach",
-        description: "Actually a nice beach!",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
         location: "Ipswich, MA",
         type: "beach",
         website: "https://thetrustees.org/place/crane-beach-on-the-crane-estate/",
