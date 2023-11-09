@@ -21,6 +21,7 @@ const ReviewTile = ({
           reviewId={reviewId}
           destination={destination}
           setDestination={setDestination}
+          reviewUserId={reviewUserId}
         />
       ) : null}
     </>
