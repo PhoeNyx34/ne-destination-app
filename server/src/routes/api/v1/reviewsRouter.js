@@ -15,6 +15,8 @@ reviewsRouter.delete("/:id", async (req, res) => {
     } catch (err) {
       res.status(500).json({ error: err });
     }
+  } else {
+    res.status(401).json({ message: "Unauthorized user" });
   }
 });
 
