@@ -105,3 +105,38 @@ body {
 .sign-in:focus {
   color: #006D77;
 }
+
+.form-title {
+  color: #2b2d42;
+  // color: #006D77;
+  font-family: 'DM Serif Display'
+}
+
+
+.form-inputField {
+  color: #2b2d42;
+  height: 40px;
+  width: 600px;    
+      // margin: auto 1px;
+      padding: 7px 0;
+  // background-color: white;
+}
+
+.form-submit-button {
+  float: center;
+  background-color: #2b2d42;
+  color: #EDF6F9;
+    // text-decoration: none;
+  text-transform: uppercase;
+  border-radius: .2em;
+  height: 40px;
+  width: 100px;
+    // text-align: center;
+    // margin: auto 1px;
+    // padding: 7px 0;
+
+  font-family: 'Helvetica Neue';
+  //font-weight: bold;
+  }
+
+
