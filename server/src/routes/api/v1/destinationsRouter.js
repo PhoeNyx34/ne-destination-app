@@ -36,10 +36,6 @@ destinationsRouter.get("/:id", async (req, res) => {
   try {
     const destination = await Destination.query().findById(id);
     const relatedReviews = await destination.$relatedQuery("reviews");
-    // const relatedReviewsWithVotes = await Promise.all(relatedReviews.map(async (review) => {
-    //   const serializedReview = await ReviewSerializer.getSummaryWithVotes(review)
-    //   return serializedReview
-    // }))
     const serializedReviews = await ReviewSerializer.getSummaryWithVotes(relatedReviews, req.user)
     destination.reviews = serializedReviews;
     return res.status(200).json({ destination: destination });
