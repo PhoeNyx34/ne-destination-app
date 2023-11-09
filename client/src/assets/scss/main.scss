@@ -74,8 +74,6 @@ body {
   border: 1px solid #006D77;
 }
 
-
-
 .top-bar {
   border: 1px solid #006D77;
   background-color: #83C5BE;
@@ -107,6 +105,9 @@ body {
 }
 
 .form-title {
+  text-align: center;
+    display: inline;
+    // color: #006D77;
   color: #2b2d42;
   // color: #006D77;
   font-family: 'DM Serif Display'
@@ -117,16 +118,30 @@ body {
   color: #2b2d42;
   height: 40px;
   width: 600px;    
-      // margin: auto 1px;
+    margin: auto 1px;
       padding: 7px 0;
   // background-color: white;
 }
 
+.form-field-multiline {
+  height: 100px;
+  width: 600px;
+  padding: 10px 10px 10px 10px;
+  font-family: 'Muli';
+  font-weight: bold;
+}
+
+.form-label {
+  color: #006D77;
+  font-family: 'Red Hat Text';
+  font-size: 12px
+
+}
+
 .form-submit-button {
-  float: center;
-  background-color: #2b2d42;
+  // input-border: 
+  background-color: #006D77;
   color: #EDF6F9;
-    // text-decoration: none;
   text-transform: uppercase;
   border-radius: .2em;
   height: 40px;
@@ -135,8 +150,8 @@ body {
     // margin: auto 1px;
     // padding: 7px 0;
 
-  font-family: 'Helvetica Neue';
+  font-family: 'Red Hat Text';
+
   //font-weight: bold;
   }
-
 
