@@ -1,9 +1,11 @@
+
 import express from "express";
-import { Destination } from "../../../models/index.js";
+import { Destination, Review } from "../../../models/index.js";
 import destinationReviewsRouter from "./destinationsReviewRouter.js";
 import objection from "objection";
 const { ValidationError } = objection;
 import cleanUserInput from "../../../services/cleanUserInput.js";
+import ReviewSerializer from "../../../serializers/ReviewSerializer.js";
 const destinationsRouter = new express.Router();
 
 destinationsRouter.get("/", async (req, res) => {
@@ -34,7 +36,12 @@ destinationsRouter.get("/:id", async (req, res) => {
   try {
     const destination = await Destination.query().findById(id);
     const relatedReviews = await destination.$relatedQuery("reviews");
-    destination.reviews = relatedReviews;
+    // const relatedReviewsWithVotes = await Promise.all(relatedReviews.map(async (review) => {
+    //   const serializedReview = await ReviewSerializer.getSummaryWithVotes(review)
+    //   return serializedReview
+    // }))
+    const serializedReviews = await ReviewSerializer.getSummaryWithVotes(relatedReviews, req.user)
+    destination.reviews = serializedReviews;
     return res.status(200).json({ destination: destination });
   } catch (err) {
     return res.status(500).json({ error: err });

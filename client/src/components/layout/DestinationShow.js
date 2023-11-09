@@ -30,13 +30,13 @@ const DestinationShow = (props) => {
     getDestination();
   }, []);
 
-  const reviewsList = reviews.map(reviewItem => {
+
+  const reviewsList = reviews.map(review => {
     return ( 
         <ReviewTile 
-            key={reviewItem.id} 
-            title={reviewItem.title}
-            content={reviewItem.content}
-            rating={reviewItem.rating}
+            key={review.id}
+            review={review}
+            user={props.user}
         />
     )
   })
