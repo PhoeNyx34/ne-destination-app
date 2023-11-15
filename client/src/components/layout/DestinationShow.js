@@ -41,6 +41,7 @@ const DestinationShow = (props) => {
         destination={destination}
         setDestination={setDestination}
         user={props.user}
+        reviewItem={reviewItem}
         reviewUserId={reviewItem.userId}
       />
     );
