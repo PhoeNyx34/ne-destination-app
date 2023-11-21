@@ -29,11 +29,14 @@ body {
 }
 
 .tile-style {
+  font-family:'Futura';
   padding: 1em;
   margin: 0 .5em;
   background-color: white;
-  border: 1px solid #006D77;
+  border: 1px solid #006d7763;
+  border-radius: .5em;
   margin: 1em 0 1em 0;
+  box-shadow: 1px 1px 1px 1px #77969b58;
 }
 
 .icon {
@@ -44,22 +47,24 @@ body {
 
 .tile-name {
   display: inline;
+  font-family:'Futura';
+  color: #4c4f51;
 }
 
 .custom-button {
   float: right;
   background-color: #006D77;
-  color: #EDF6F9;
+  color: #ffffff;
+  font-family:'Futura';
+  font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: .2em;
+  border-radius: .9em;
   height: 40px;
   width: 70px;
   text-align: center;
   margin: auto 1px;
   padding: 7px 0;
-  font-weight: bold;
-  font-family:'Proxima Nova'
 }
 
 .custom-button:hover, .nav-option:hover {
@@ -90,8 +95,20 @@ body {
 }
 
 .nav-option {
-  background-color: #006D77;
-  color: #EDF6F9;
+  background-color: #ffffff;
+  color: #006D77;
+  font-family:'Futura';
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: .9em;
+  height: 40px;
+  width: auto;
+  text-align: center;
+  margin: auto 1px;
+  padding: 7px 0;
+  border-color:#006d7785;
+
 }
 
 .sign-in {
@@ -99,7 +116,7 @@ body {
 }
 
 .sign-in:hover {
-  color: #EDF6F9;
+  color: #206970;
 }
 
 .sign-in:focus {
@@ -111,14 +128,14 @@ body {
   font-family: 'DM Serif Display';
   text-align: left;
   padding: 10px 0;
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-label {
-  color: #006D77;
-  font-family: 'Proxima Nova';
-  font-size: 18px;
+  color: #2e2f3e;
+  font-family: 'Futura';
+  font-size: 17px;
   text-align: left;
   padding: 0px 0px 0px 0px;
 }
@@ -130,7 +147,7 @@ body {
   height: 40px;
   width: 500px;
   padding: 7px 0px 12px 0px;
-  border-radius: .2em;
+  border-radius: .4em;
   align-items: center;
   justify-content: center;
 }
@@ -141,24 +158,24 @@ body {
   height: 100px;
   width: 500px;
   padding: 7px 0 10px 0px;
-  border-radius: .2em;
+  border-radius: .4em;
   align-content: center;
   justify-content: center;
 
 }
 
-
 .form-submit-button {
-  background-color: #006D77;
-  color: #EDF6F9;
+  background-color: #056D77;
+  color: #ffffff;
+  font-family: 'Futura';
+  font-weight: 100;
+  font-size: 16px;
+  letter-spacing: .5px;
   text-transform: uppercase;
-  border-radius: .2em;
-  height: 40px;
-  width: auto;
+  border-radius: .9em;
+  height: 50px;
+  width: 250px;
   margin: 50px 1px;
   padding: 50px 50;
-  font-family: 'Proxima Nova';
-  font-weight: bold;
   border-style: none;
   }
-

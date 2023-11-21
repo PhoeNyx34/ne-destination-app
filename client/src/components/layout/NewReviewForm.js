@@ -76,10 +76,8 @@ const NewReviewForm = (props) => {
     <>
       <div className="grid-container">
         <h1 className="form-title">New Review Form</h1>
-
         <ErrorList errors={errors} />
-
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form-label">
           <label className="form-label">Title</label>
           <input
             className="form-input-single"
@@ -88,7 +86,6 @@ const NewReviewForm = (props) => {
             type="text"
             onChange={handleInputChange}
           />
-
           <label className="form-label">Your Review</label>
           <input
             className="form-input-multi"

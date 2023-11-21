@@ -11,5 +11,6 @@
     "editor.formatOnSave": true,
     "editor.fontFamily": "Source Pro Code",
     "editor.lineHeight": 1.3,
-    "window.density.editorTabHeight": "compact"
+    "window.density.editorTabHeight": "compact",
+    "editor.fontSize": 13
 }
