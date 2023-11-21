@@ -50,12 +50,12 @@ const DestinationShow = (props) => {
         <li>{location}</li>
         <li>{website}</li>
       </ul>
+      <h1 className="form-title">Reviews</h1>
       {props.user ? (
         <Link to={`/destinations/${destination.id}/new-review`}>Submit a New Review</Link>
       ) : (
         <Link to="/user-sessions/new">Please sign in to leave a review</Link>
       )}
-      <h2 className="form-title">Reviews</h2>
       {reviewsList}
     </div>
   );
